@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -22,7 +23,9 @@
             --slide-transition: 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
@@ -39,9 +42,9 @@
 
         /* --- DECK CONTAINER --- */
         .deck-container {
-            width: 1280px; 
+            width: 1280px;
             height: 720px;
-            flex-shrink: 0; 
+            flex-shrink: 0;
             background-color: var(--bg-color);
             position: relative;
             box-shadow: 0 20px 50px rgba(74, 59, 50, 0.15);
@@ -56,13 +59,28 @@
             background: linear-gradient(135deg, rgba(156, 140, 116, 0.05), rgba(198, 168, 124, 0.05));
             z-index: 0;
         }
-        .c1 { width: 600px; height: 600px; top: -100px; right: -100px; }
-        .c2 { width: 400px; height: 400px; bottom: -50px; left: -50px; }
+
+        .c1 {
+            width: 600px;
+            height: 600px;
+            top: -100px;
+            right: -100px;
+        }
+
+        .c2 {
+            width: 400px;
+            height: 400px;
+            bottom: -50px;
+            left: -50px;
+        }
 
         /* --- SLIDE --- */
         .slide {
             position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             padding: 40px 60px;
             opacity: 0;
             visibility: hidden;
@@ -74,353 +92,508 @@
             align-items: center;
             z-index: 1;
         }
-        .slide.active { opacity: 1; visibility: visible; transform: scale(1); z-index: 2; }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1);
+            z-index: 2;
+        }
 
         /* --- TYPOGRAPHY --- */
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; color: var(--primary-dark); margin: 0; line-height: 1.1; }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--primary-dark); margin-bottom: 20px; border-bottom: 3px solid var(--accent-gold); display: inline-block; padding-bottom: 5px; }
-        p { font-size: 1rem; line-height: 1.6; color: var(--text-light); margin-bottom: 1rem; }
-        .sub-heading { text-transform: uppercase; letter-spacing: 2px; color: var(--accent-gold); font-weight: 600; font-size: 0.9rem; margin-bottom: 10px; }
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--primary-dark);
+            margin: 0;
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            border-bottom: 3px solid var(--accent-gold);
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .sub-heading {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
 
         /* --- TABLES & GRIDS --- */
         .comparison-table {
-            width: 100%; border-collapse: collapse; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-radius: 8px; overflow: hidden; margin-top: 20px; font-size: 0.85rem;
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+            font-size: 0.85rem;
         }
-        .comparison-table th { background-color: var(--primary-dark); color: white; padding: 12px; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
-        .comparison-table td { padding: 12px; border-bottom: 1px solid #eee; text-align: center; }
-        .comparison-table td:first-child { text-align: left; font-weight: bold; color: var(--primary-dark); }
-        .comparison-table tr:hover { background-color: #f9f9f9; }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; width: 100%; align-items: stretch; }
-        
-        .card {
-            background: white; padding: 25px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 5px 15px rgba(0,0,0,0.03); text-align: left; position: relative;
+        .comparison-table th {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 12px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
         }
-        .card h3 { margin-top: 0; color: var(--primary-dark); }
-        
+
+        .comparison-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+
+        .comparison-table td:first-child {
+            text-align: left;
+            font-weight: bold;
+            color: var(--primary-dark);
+        }
+
+        .comparison-table tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+            align-items: stretch;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+            text-align: left;
+            position: relative;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-dark);
+        }
+
         /* Status Badge */
         .status-pill {
-            display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px;
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        .status-review { background: #E3F2FD; color: #1565C0; }
+
+        .status-review {
+            background: #E3F2FD;
+            color: #1565C0;
+        }
 
         /* --- CONTROLS --- */
-        .controls { position: absolute; bottom: 20px; right: 40px; z-index: 100; display: flex; gap: 15px; align-items: center; }
-        .nav-btn { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--primary-dark); background: transparent; cursor: pointer; color: var(--primary-dark); transition: 0.3s; }
-        .nav-btn:hover { background: var(--primary-dark); color: var(--accent-gold); }
-        .watermark { position: absolute; bottom: 25px; left: 40px; font-size: 0.8rem; color: var(--text-light); opacity: 0.6; }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            right: 40px;
+            z-index: 100;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--primary-dark);
+            background: transparent;
+            cursor: pointer;
+            color: var(--primary-dark);
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: var(--primary-dark);
+            color: var(--accent-gold);
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 25px;
+            left: 40px;
+            font-size: 0.8rem;
+            color: var(--text-light);
+            opacity: 0.6;
+        }
     </style>
 </head>
+
 <body>
 
-<div class="deck-container">
-    <div class="bg-circle c1"></div>
-    <div class="bg-circle c2"></div>
-    <div class="watermark">Progress Report &bull; Karima Syar'i</div>
+    <div class="deck-container">
+        <div class="bg-circle c1"></div>
+        <div class="bg-circle c2"></div>
+        <div class="watermark">Progress Report &bull; Karima Syar'i</div>
 
-    <!-- SLIDE 1: COVER -->
-    <div class="slide active" id="slide-1">
-        <div style="text-align: center;">
-            <p class="sub-heading">Development Progress</p>
-            <h1>Status Integrasi &<br>Pemilihan Vendor</h1>
-            <div style="width: 100px; height: 3px; background: var(--accent-gold); margin: 30px auto;"></div>
-            <p style="font-size: 1.2rem; color: var(--primary-dark);">Fokus: Payment (Midtrans vs Moota) & Shipping (Aggregator)</p>
-            <div style="margin-top: 40px; font-size: 0.9rem;">
-                <strong>Dikdik Muhamad Sadikin</strong> &bull; Web Strategist
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 2: CURRENT STATUS -->
-    <div class="slide" id="slide-2">
-        <div style="width: 100%; max-width: 900px;">
-            <div class="sub-heading">Laporan Status</div>
-            <h2>Posisi Pengembangan Saat Ini</h2>
-            <p>Infrastruktur utama (Custom System) sudah berjalan. Fitur pembayaran dan pengiriman utama <b>sudah terintegrasi</b>.</p>
-
-            <div class="grid-2" style="margin-top: 40px;">
-                <div class="card" style="border-left: 5px solid var(--success);">
-                    <h3>✅ Fitur Terintegrasi (Siap)</h3>
-                    <ul style="padding-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.8;">
-                        <li><b>Payment Gateway:</b> Midtrans (Sudah Terhubung).</li>
-                        <li><b>Shipping API:</b> RajaOngkir (Sudah Terhubung).</li>
-                        <li>Core System Website (Backend & Frontend).</li>
-                        <li>Sistem Keranjang & Checkout.</li>
-                    </ul>
-                </div>
-                <div class="card" style="border-left: 5px solid var(--info);">
-                    <h3>📊 Data Pembanding (Opsional)</h3>
-                    <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Berikut adalah analisa perbandingan vendor lain sebagai validasi keputusan:</p>
-                    <ul style="padding-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.8;">
-                        <li><b>Payment Alternatif:</b> Moota (Cek Mutasi).</li>
-                        <li><b>Shipping Alternatif:</b> Biteship & KiriminAja.</li>
-                    </ul>
+        <!-- SLIDE 1: COVER -->
+        <div class="slide active" id="slide-1">
+            <div style="text-align: center;">
+                <p class="sub-heading">Development Progress</p>
+                <h1>Status Integrasi &<br>Pemilihan Vendor</h1>
+                <div style="width: 100px; height: 3px; background: var(--accent-gold); margin: 30px auto;"></div>
+                <p style="font-size: 1.2rem; color: var(--primary-dark);">Fokus: Payment (Midtrans vs Moota) & Shipping
+                    (Aggregator)</p>
+                <div style="margin-top: 40px; font-size: 0.9rem;">
+                    <strong>Dikdik Muhamad Sadikin</strong> &bull; Web Strategist
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- SLIDE 3: PAYMENT COMPARISON -->
-    <div class="slide" id="slide-3">
-        <div style="width: 100%;">
-            <div class="sub-heading">Analisa Pembayaran</div>
-            <h2>Midtrans vs Moota</h2>
-            <p>Perbandingan antara <b>Payment Gateway Otomatis</b> (yang sudah terpasang) vs <b>Cek Mutasi Manual</b>.</p>
+        <!-- SLIDE 2: CURRENT STATUS -->
+        <div class="slide" id="slide-2">
+            <div style="width: 100%; max-width: 900px;">
+                <div class="sub-heading">Laporan Status</div>
+                <h2>Posisi Pengembangan Saat Ini</h2>
+                <p>Infrastruktur utama (Custom System) sudah berjalan. Fitur pembayaran dan pengiriman utama <b>sudah
+                        terintegrasi</b>.</p>
 
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Fitur</th>
-                        <th style="background: #0052CC;">Midtrans (Payment Gateway)</th>
-                        <th style="background: #F47C20;">Moota (Cek Mutasi)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fungsi Utama</td>
-                        <td>Menerima pembayaran berbagai metode (QRIS, VA, CC).</td>
-                        <td>Mengecek mutasi rekening bank (Hanya Transfer).</td>
-                    </tr>
-                    <tr>
-                        <td>Pengalaman User</td>
-                        <td><b>Sangat Mudah.</b> Scan QRIS / Salin VA. Tidak perlu kirim bukti bayar.</td>
-                        <td><b>Agak Ribet.</b> Harus transfer nominal unik (misal: Rp 150.123).</td>
-                    </tr>
-                    <tr>
-                        <td>Metode Bayar</td>
-                        <td>BCA, Mandiri, BRI, BNI, QRIS, GoPay, ShopeePay, Alfamart.</td>
-                        <td>Hanya Transfer Bank (Sesuai rekening yang Anda punya).</td>
-                    </tr>
-                    <tr>
-                        <td>Verifikasi</td>
-                        <td><b>Otomatis & Real-time</b> (Detik itu juga).</td>
-                        <td><b>Semi-Otomatis</b> (Ada jeda cek mutasi 10-15 menit).</td>
-                    </tr>
-                    <tr>
-                        <td>Biaya</td>
-                        <td>Per Transaksi (~Rp 4.000 atau 0.7% QRIS).</td>
-                        <td>Langganan Poin (Murah, mulai Rp 1.500/hari).</td>
-                    </tr>
-                    <tr>
-                        <td>Keamanan</td>
-                        <td>Sangat Aman (Standar Bank Indonesia).</td>
-                        <td>Butuh akses iBanking (Username/Pass) Anda.</td>
-                    </tr>
-                </tbody>
-            </table>
-            
-            <div style="margin-top: 20px; font-size: 0.9rem; font-style: italic; text-align: center; color: var(--text-light);">
-                <strong>Rekomendasi:</strong> Keputusan menggunakan <b>Midtrans</b> sudah tepat untuk profesionalitas dan kemudahan pembeli. Moota hanya disarankan jika ingin memangkas biaya admin ekstrem namun mengorbankan kenyamanan pembeli.
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 4: SHIPPING COMPARISON -->
-    <div class="slide" id="slide-4">
-        <div style="width: 100%;">
-            <div class="sub-heading">Analisa Logistik</div>
-            <h2>Komparasi Shipping Provider</h2>
-            <p>Membandingkan RajaOngkir (yang sudah terpasang) dengan opsi Aggregator lain.</p>
-
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Fitur</th>
-                        <th>RajaOngkir</th>
-                        <th>Biteship</th>
-                        <th>KiriminAja</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Fungsi</td>
-                        <td>Cek Harga Ongkir Saja (Data).</td>
-                        <td>Cek Ongkir + <b>Pickup Kurir</b>.</td>
-                        <td>Cek Ongkir + <b>Pickup Kurir</b>.</td>
-                    </tr>
-                    <tr>
-                        <td>Target User</td>
-                        <td>Umum / Developer.</td>
-                        <td>Personal & Bisnis (Fleksibel).</td>
-                        <td><b>Wajib PT/CV</b> (Corporate).</td>
-                    </tr>
-                    <tr>
-                        <td>Biaya</td>
-                        <td>Gratis (Starter) / Langganan (Pro).</td>
-                        <td>Pay Per Use (Ada Service Fee).</td>
-                        <td>Deposit Awal Rp 2 Juta (Saldo).</td>
-                    </tr>
-                    <tr>
-                        <td>Risiko</td>
-                        <td>Fitur Terbatas di Starter.</td>
-                        <td>Biaya Ongkir Lebih Mahal (Service Fee).</td>
-                        <td><b>Saldo Hangus</b> jika tidak habis dalam 3 bulan.</td>
-                    </tr>
-                    <tr>
-                        <td>Kecocokan</td>
-                        <td>Untuk Toko yang kirim manual ke JNE.</td>
-                        <td>Untuk Toko yang ingin kurir jemput ke rumah.</td>
-                        <td>Untuk Toko volume tinggi (>30 paket/hari).</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- SLIDE 5: RECOMMENDATION -->
-    <div class="slide" id="slide-5">
-        <div style="width: 100%; max-width: 900px;">
-            <div class="sub-heading">Saran Strategis</div>
-            <h2>Rekomendasi Web Strategist</h2>
-            <p>Berdasarkan kondisi Karima Syar'i saat ini (Tahap Growth & Efisiensi):</p>
-
-            <div class="grid-2">
-                <div class="card" style="border-top: 4px solid var(--accent-gold);">
-                    <h3>1. Untuk Pembayaran</h3>
-                    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Tetap di MIDTRANS</p>
-                    <p style="font-size: 0.9rem; color: #555;">
-                        Integrasi sudah berjalan lancar. Konversi penjualan akan naik drastis karena pembeli dimudahkan (bisa QRIS/VA). Tidak perlu konfirmasi manual yang melelahkan admin.
-                    </p>
-                </div>
-                <div class="card" style="border-top: 4px solid var(--primary-sage);">
-                    <h3>2. Untuk Pengiriman</h3>
-                    <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Mulai dengan RAJAONGKIR</p>
-                    <p style="font-size: 0.9rem; color: #555;">
-                        Untuk fase awal, <b>RajaOngkir (Starter)</b> adalah pilihan paling efisien. Admin antar paket manual ke JNE. Nanti jika volume kiriman sudah tinggi (>20 paket/hari), kita bisa upgrade integrasi ke <b>Biteship</b> untuk fitur Pickup Otomatis.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 6: NEXT STEPS -->
-    <div class="slide" id="slide-6">
-        <h2>Langkah Selanjutnya</h2>
-        <p>Setelah validasi vendor ini, berikut jadwal pengerjaannya:</p>
-        
-        <div style="width: 100%; max-width: 800px; text-align: left; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-            <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-                <div style="background: var(--primary-dark); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">1</div>
-                <div>
-                    <strong>Konfirmasi Pilihan</strong><br>
-                    <span style="font-size: 0.9rem; color: #666;">Menyetujui penggunaan Midtrans & RajaOngkir untuk fase Launching.</span>
-                </div>
-            </div>
-            <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-                <div style="background: var(--accent-gold); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">2</div>
-                <div>
-                    <strong>Testing Pembayaran (1-2 Hari)</strong><br>
-                    <span style="font-size: 0.9rem; color: #666;">Simulasi transaksi riil menggunakan akun Midtrans & RajaOngkir yang sudah terpasang.</span>
-                </div>
-            </div>
-            <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-                <div style="background: var(--primary-sage); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">3</div>
-                <div>
-                    <strong>Input Produk Massal (3-4 Hari)</strong><br>
-                    <span style="font-size: 0.9rem; color: #666;">Memasukkan data produk (Foto, Deskripsi, Berat) ke database sistem.</span>
-                </div>
-            </div>
-             <div style="display: flex; gap: 20px; align-items: center;">
-                <div style="background: #333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">4</div>
-                <div>
-                    <strong>Go-Live Preparation</strong><br>
-                    <span style="font-size: 0.9rem; color: #666;">Persiapan server untuk menerima trafik publik.</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SLIDE 7: REQUIREMENTS CHECKLIST -->
-    <div class="slide" id="slide-7">
-        <div style="width: 100%;">
-            <div class="sub-heading">Tindak Lanjut</div>
-            <h2>Checklist Kebutuhan Materi</h2>
-            <p>Mohon lengkapi data berikut agar website dapat segera diselesaikan:</p>
-
-            <div class="grid-2" style="font-size: 0.85rem; text-align: left; align-items: start; gap: 20px; margin-top: 20px;">
-                <!-- Column 1 -->
-                <div>
-                    <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px;">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">1. Identitas Brand</h4>
-                        <ul style="padding-left: 20px; margin: 0; color: #555;">
-                            <li><b>Profil Singkat (About Us):</b> Cerita, visi, & nilai brand.</li>
-                            <li><b>Kontak Resmi:</b> Alamat, WA Admin, Email.</li>
+                <div class="grid-2" style="margin-top: 40px;">
+                    <div class="card" style="border-left: 5px solid var(--success);">
+                        <h3>✅ Fitur Terintegrasi (Siap)</h3>
+                        <ul style="padding-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.8;">
+                            <li><b>Payment Gateway:</b> Midtrans (Sudah Terhubung).</li>
+                            <li><b>Shipping API:</b> RajaOngkir (Sudah Terhubung).</li>
+                            <li>Core System Website (Backend & Frontend).</li>
+                            <li>Sistem Keranjang & Checkout.</li>
                         </ul>
                     </div>
-                    
-                    <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee;">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">2. Katalog Produk (Min. 10-20 SKU)</h4>
-                        <ul style="padding-left: 20px; margin: 0; color: #555;">
-                            <li><b>Berat Produk (Gram):</b> Wajib untuk hitung ongkir otomatis.</li>
-                            <li><b>Stok Awal:</b> Jumlah per varian (warna/ukuran).</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div>
-                    <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px;">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">3. Transaksi & Legalitas</h4>
-                        <ul style="padding-left: 20px; margin: 0; color: #555;">
-                            <li><b>Data Rekening:</b> Bank, No. Rek, Atas Nama.</li>
-                            <li><b>Kebijakan Retur:</b> Syarat pengembalian (misal: wajib video unboxing).</li>
-                            <li><b>Jam Operasional:</b> Untuk fitur chat WhatsApp.</li>
-                        </ul>
-                    </div>
-
-                    <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee;">
-                        <h4 style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">4. Aset Pemasaran</h4>
-                        <ul style="padding-left: 20px; margin: 0; color: #555;">
-                            <li><b>Link Sosmed:</b> IG, TikTok, FB Page.</li>
-                            <li><b>Banner Utama (Opsional):</b> Foto landscape untuk hero image.</li>
-                            <li><b>Testimoni:</b> Screenshot/teks untuk social proof.</li>
+                    <div class="card" style="border-left: 5px solid var(--info);">
+                        <h3>📊 Data Pembanding (Opsional)</h3>
+                        <p style="font-size: 0.9rem; color: #555; margin-bottom: 10px;">Berikut adalah analisa
+                            perbandingan vendor lain sebagai validasi keputusan:</p>
+                        <ul style="padding-left: 20px; color: #555; font-size: 0.9rem; line-height: 1.8;">
+                            <li><b>Payment Alternatif:</b> Moota (Cek Mutasi).</li>
+                            <li><b>Shipping Alternatif:</b> Biteship & KiriminAja.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- SLIDE 8: CLOSING -->
-    <div class="slide" id="slide-8">
-        <div style="text-align: center;">
-            <h1>Diskusi & Keputusan</h1>
-            <p style="margin-top: 20px; font-size: 1.1rem; max-width: 700px;">
-                Jika Bapak/Ibu setuju dengan validasi vendor ini, kami akan langsung memfinalisasi sistem pembayaran dan pengiriman agar siap untuk <i>Live Test</i>.
-            </p>
-            <div style="margin-top: 50px;">
-                <button class="nav-btn" onclick="location.reload()" style="width: auto; padding: 0 30px; border-radius: 4px;">Replay Presentation</button>
+        <!-- SLIDE 3: PAYMENT COMPARISON -->
+        <div class="slide" id="slide-3">
+            <div style="width: 100%;">
+                <div class="sub-heading">Analisa Pembayaran</div>
+                <h2>Midtrans vs Moota</h2>
+                <p>Perbandingan antara <b>Payment Gateway Otomatis</b> (yang sudah terpasang) vs <b>Cek Mutasi
+                        Manual</b>.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fitur</th>
+                            <th style="background: #0052CC;">Midtrans (Payment Gateway)</th>
+                            <th style="background: #F47C20;">Moota (Cek Mutasi)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fungsi Utama</td>
+                            <td>Menerima pembayaran berbagai metode (QRIS, VA, CC).</td>
+                            <td>Mengecek mutasi rekening bank (Hanya Transfer).</td>
+                        </tr>
+                        <tr>
+                            <td>Pengalaman User</td>
+                            <td><b>Sangat Mudah.</b> Scan QRIS / Salin VA. Tidak perlu kirim bukti bayar.</td>
+                            <td><b>Agak Ribet.</b> Harus transfer nominal unik (misal: Rp 150.123).</td>
+                        </tr>
+                        <tr>
+                            <td>Metode Bayar</td>
+                            <td>BCA, Mandiri, BRI, BNI, QRIS, GoPay, ShopeePay, Alfamart.</td>
+                            <td>Hanya Transfer Bank (Sesuai rekening yang Anda punya).</td>
+                        </tr>
+                        <tr>
+                            <td>Verifikasi</td>
+                            <td><b>Otomatis & Real-time</b> (Detik itu juga).</td>
+                            <td><b>Semi-Otomatis</b> (Ada jeda cek mutasi 10-15 menit).</td>
+                        </tr>
+                        <tr>
+                            <td>Biaya</td>
+                            <td>Per Transaksi (~Rp 4.000 atau 0.7% QRIS).</td>
+                            <td>Langganan Poin (Murah, mulai Rp 1.500/hari).</td>
+                        </tr>
+                        <tr>
+                            <td>Keamanan</td>
+                            <td>Sangat Aman (Standar Bank Indonesia).</td>
+                            <td>Butuh akses iBanking (Username/Pass) Anda.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div
+                    style="margin-top: 20px; font-size: 0.9rem; font-style: italic; text-align: center; color: var(--text-light);">
+                    <!-- <strong>Rekomendasi:</strong> Keputusan menggunakan <b>Midtrans</b> sudah tepat untuk profesionalitas dan kemudahan pembeli. Moota hanya disarankan jika ingin memangkas biaya admin ekstrem namun mengorbankan kenyamanan pembeli. -->
+                </div>
             </div>
         </div>
+
+        <!-- SLIDE 4: SHIPPING COMPARISON -->
+        <div class="slide" id="slide-4">
+            <div style="width: 100%;">
+                <div class="sub-heading">Analisa Logistik</div>
+                <h2>Komparasi Shipping Provider</h2>
+                <p>Membandingkan RajaOngkir (yang sudah terpasang) dengan opsi Aggregator lain.</p>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Fitur</th>
+                            <th>RajaOngkir</th>
+                            <th>Biteship</th>
+                            <th>KiriminAja</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Fungsi</td>
+                            <td>Cek Harga Ongkir Saja (Data).</td>
+                            <td>Cek Ongkir + <b>Pickup Kurir</b>.</td>
+                            <td>Cek Ongkir + <b>Pickup Kurir</b>.</td>
+                        </tr>
+                        <tr>
+                            <td>Target User</td>
+                            <td>Umum / Developer.</td>
+                            <td>Personal & Bisnis (Fleksibel).</td>
+                            <td><b>Wajib PT/CV</b> (Corporate).</td>
+                        </tr>
+                        <tr>
+                            <td>Biaya</td>
+                            <td>Gratis (Starter) / Langganan (Pro).</td>
+                            <td>Pay Per Use (Ada Service Fee).</td>
+                            <td>Deposit Awal Rp 2 Juta (Saldo).</td>
+                        </tr>
+                        <tr>
+                            <td>Risiko</td>
+                            <td>Fitur Terbatas di Starter.</td>
+                            <td>Biaya Ongkir Lebih Mahal (Service Fee).</td>
+                            <td><b>Saldo Hangus</b> jika tidak habis dalam 3 bulan.</td>
+                        </tr>
+                        <tr>
+                            <td>Kecocokan</td>
+                            <td>Untuk Toko yang kirim manual ke JNE.</td>
+                            <td>Untuk Toko yang ingin kurir jemput ke rumah.</td>
+                            <td>Untuk Toko volume tinggi (>30 paket/hari).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: RECOMMENDATION -->
+        <div class="slide" id="slide-5">
+            <div style="width: 100%; max-width: 900px;">
+                <div class="sub-heading">Saran Strategis</div>
+                <h2>Rekomendasi Web Strategist</h2>
+                <p>Berdasarkan kondisi Karima Syar'i saat ini (Tahap Growth & Efisiensi):</p>
+
+                <div class="grid-2">
+                    <div class="card" style="border-top: 4px solid var(--accent-gold);">
+                        <h3>1. Untuk Pembayaran</h3>
+                        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Tetap di MIDTRANS</p>
+                        <p style="font-size: 0.9rem; color: #555;">
+                            Integrasi sudah berjalan lancar. Konversi penjualan akan naik drastis karena pembeli
+                            dimudahkan (bisa QRIS/VA). Tidak perlu konfirmasi manual yang melelahkan admin.
+                        </p>
+                    </div>
+                    <div class="card" style="border-top: 4px solid var(--primary-sage);">
+                        <h3>2. Untuk Pengiriman</h3>
+                        <p style="font-weight: bold; font-size: 1.1rem; margin-bottom: 10px;">Mulai dengan RAJAONGKIR
+                        </p>
+                        <p style="font-size: 0.9rem; color: #555;">
+                            Untuk fase awal, <b>RajaOngkir (Starter)</b> adalah pilihan paling efisien. Admin antar
+                            paket manual ke JNE. Nanti jika volume kiriman sudah tinggi (>20 paket/hari), kita bisa
+                            upgrade integrasi ke <b>RajaOngkir Enterprise</b> untuk fitur Pickup Otomatis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: NEXT STEPS -->
+        <div class="slide" id="slide-6">
+            <h2>Langkah Selanjutnya</h2>
+            <p>Setelah validasi vendor ini, berikut jadwal pengerjaannya:</p>
+
+            <div
+                style="width: 100%; max-width: 800px; text-align: left; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <div
+                        style="background: var(--primary-dark); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">
+                        1</div>
+                    <div>
+                        <strong>Konfirmasi Pilihan</strong><br>
+                        <span style="font-size: 0.9rem; color: #666;">Menyetujui penggunaan Midtrans & RajaOngkir untuk
+                            fase Launching.</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <div
+                        style="background: var(--accent-gold); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">
+                        2</div>
+                    <div>
+                        <strong>Testing Pembayaran (1-2 Hari)</strong><br>
+                        <span style="font-size: 0.9rem; color: #666;">Simulasi transaksi riil menggunakan akun Midtrans
+                            & RajaOngkir yang sudah terpasang.</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                    <div
+                        style="background: var(--primary-sage); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">
+                        3</div>
+                    <div>
+                        <strong>Input Produk Massal (3-4 Hari)</strong><br>
+                        <span style="font-size: 0.9rem; color: #666;">Memasukkan data produk (Foto, Deskripsi, Berat) ke
+                            database sistem.</span>
+                    </div>
+                </div>
+                <div style="display: flex; gap: 20px; align-items: center;">
+                    <div
+                        style="background: #333; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold;">
+                        4</div>
+                    <div>
+                        <strong>Go-Live Preparation</strong><br>
+                        <span style="font-size: 0.9rem; color: #666;">Persiapan server untuk menerima trafik
+                            publik.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: REQUIREMENTS CHECKLIST -->
+        <div class="slide" id="slide-7">
+            <div style="width: 100%;">
+                <div class="sub-heading">Tindak Lanjut</div>
+                <h2>Checklist Kebutuhan Materi</h2>
+                <p>Mohon lengkapi data berikut agar website dapat segera diselesaikan:</p>
+
+                <div class="grid-2"
+                    style="font-size: 0.85rem; text-align: left; align-items: start; gap: 20px; margin-top: 20px;">
+                    <!-- Column 1 -->
+                    <div>
+                        <div
+                            style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px;">
+                            <h4
+                                style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">
+                                1. Identitas Brand</h4>
+                            <ul style="padding-left: 20px; margin: 0; color: #555;">
+                                <li><b>Profil Singkat (About Us):</b> Cerita, visi, & nilai brand.</li>
+                                <li><b>Kontak Resmi:</b> Alamat, WA Admin, Email.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee;">
+                            <h4
+                                style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">
+                                2. Katalog Produk (Min. 10-20 SKU)</h4>
+                            <ul style="padding-left: 20px; margin: 0; color: #555;">
+                                <li><b>Berat Produk (Gram):</b> Wajib untuk hitung ongkir otomatis.</li>
+                                <li><b>Stok Awal:</b> Jumlah per varian (warna/ukuran).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div>
+                        <div
+                            style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee; margin-bottom: 20px;">
+                            <h4
+                                style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">
+                                3. Transaksi & Legalitas</h4>
+                            <ul style="padding-left: 20px; margin: 0; color: #555;">
+                                <li><b>Data Rekening:</b> Bank, No. Rek, Atas Nama.</li>
+                                <li><b>Kebijakan Retur:</b> Syarat pengembalian (misal: wajib video unboxing).</li>
+                                <li><b>Jam Operasional:</b> Untuk fitur chat WhatsApp.</li>
+                            </ul>
+                        </div>
+
+                        <div style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #eee;">
+                            <h4
+                                style="color: var(--primary-dark); margin-bottom: 10px; border-bottom: 1px dashed #ddd; padding-bottom: 5px;">
+                                4. Aset Pemasaran</h4>
+                            <ul style="padding-left: 20px; margin: 0; color: #555;">
+                                <li><b>Link Sosmed:</b> IG, TikTok, FB Page.</li>
+                                <li><b>Banner Utama (Opsional):</b> Foto landscape untuk hero image.</li>
+                                <li><b>Testimoni:</b> Screenshot/teks untuk social proof.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: CLOSING -->
+        <div class="slide" id="slide-8">
+            <div style="text-align: center;">
+                <h1>Diskusi & Keputusan</h1>
+                <p style="margin-top: 20px; font-size: 1.1rem; max-width: 700px;">
+                    Jika Bapak/Ibu setuju dengan validasi vendor ini, kami akan langsung memfinalisasi sistem pembayaran
+                    dan pengiriman agar siap untuk <i>Live Test</i>.
+                </p>
+                <div style="margin-top: 50px;">
+                    <button class="nav-btn" onclick="location.reload()"
+                        style="width: auto; padding: 0 30px; border-radius: 4px;">Replay Presentation</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <button class="nav-btn" onclick="changeSlide(-1)">❮</button>
+            <span id="slideIndicator" style="font-family: 'Montserrat'; font-weight: 600;">1 / 8</span>
+            <button class="nav-btn" onclick="changeSlide(1)">❯</button>
+        </div>
+
     </div>
 
-    <!-- CONTROLS -->
-    <div class="controls">
-        <button class="nav-btn" onclick="changeSlide(-1)">❮</button>
-        <span id="slideIndicator" style="font-family: 'Montserrat'; font-weight: 600;">1 / 8</span>
-        <button class="nav-btn" onclick="changeSlide(1)">❯</button>
-    </div>
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 8;
 
-</div>
+        function changeSlide(n) {
+            document.getElementById(`slide-${currentSlide}`).classList.remove('active');
+            currentSlide += n;
+            if (currentSlide < 1) currentSlide = 1;
+            if (currentSlide > totalSlides) currentSlide = totalSlides;
+            document.getElementById(`slide-${currentSlide}`).classList.add('active');
+            document.getElementById('slideIndicator').innerText = `${currentSlide} / ${totalSlides}`;
+        }
 
-<script>
-    let currentSlide = 1;
-    const totalSlides = 8;
-
-    function changeSlide(n) {
-        document.getElementById(`slide-${currentSlide}`).classList.remove('active');
-        currentSlide += n;
-        if (currentSlide < 1) currentSlide = 1;
-        if (currentSlide > totalSlides) currentSlide = totalSlides;
-        document.getElementById(`slide-${currentSlide}`).classList.add('active');
-        document.getElementById('slideIndicator').innerText = `${currentSlide} / ${totalSlides}`;
-    }
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') changeSlide(1);
-        if (e.key === 'ArrowLeft') changeSlide(-1);
-    });
-</script>
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') changeSlide(1);
+            if (e.key === 'ArrowLeft') changeSlide(-1);
+        });
+    </script>
 
 </body>
+
 </html>
